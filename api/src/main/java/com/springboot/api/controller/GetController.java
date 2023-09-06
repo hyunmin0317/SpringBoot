@@ -1,9 +1,7 @@
 package com.springboot.api.controller;
 
-
 import com.springboot.api.dto.MemberDto;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.Map;
 
 @RestController
@@ -42,11 +40,9 @@ public class GetController {
     @GetMapping(value = "/request2")
     public String getRequestParam2(@RequestParam Map<String, String> param) {
         StringBuilder sb = new StringBuilder();
-
         param.entrySet().forEach(map -> {
             sb.append(map.getKey() + " : " + map.getValue() + "\n");
         });
-
         return sb.toString();
     }
 
