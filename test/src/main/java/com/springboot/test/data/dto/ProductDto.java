@@ -1,14 +1,16 @@
-package com.springboot.jpa.data.dto;
+package com.springboot.test.data.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 @Builder
 public class ProductDto {
 
