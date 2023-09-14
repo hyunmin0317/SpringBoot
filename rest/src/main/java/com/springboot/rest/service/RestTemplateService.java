@@ -1,10 +1,11 @@
 package com.springboot.rest.service;
 
+import com.springboot.rest.dto.MemberDto;
+import org.springframework.http.RequestEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
-
 import java.net.URI;
 
 
@@ -50,5 +51,47 @@ public class RestTemplateService {
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<String> responseEntity = restTemplate.getForEntity(uri, String.class);
         return responseEntity.getBody();
+    }
+
+    public ResponseEntity<MemberDto> postWithParamAndBody() {
+        URI uri = UriComponentsBuilder
+                .fromUriString("http://localhost:9090")
+                .path("/api/v1/crud-api")
+                .queryParam("name", "Flature")
+                .queryParam("email", "flature@wikibooks.co.kr")
+                .queryParam("organization", "Wikibooks")
+                .encode().build().toUri();
+
+        MemberDto memberDto = new MemberDto();
+        memberDto.setName("flature!!");
+        memberDto.setEmail("flature@gmail.com");
+        memberDto.setOrganization("Around Hub Studio");
+
+        RestTemplate restTemplate = new RestTemplate();
+        ResponseEntity<MemberDto> responseEntity = restTemplate.postForEntity(uri, memberDto, MemberDto.class);
+        return responseEntity;
+    }
+
+    public ResponseEntity<MemberDto> postWithHeader() {
+        URI uri = UriComponentsBuilder
+                .fromUriString("http://localhost:9090")
+                .path("/api/v1/crud-api/add-header")
+                .encode()
+                .build()
+                .toUri();
+
+        MemberDto memberDTO = new MemberDto();
+        memberDTO.setName("flature");
+        memberDTO.setEmail("flature@wikibooks.co.kr");
+        memberDTO.setOrganization("Around Hub Studio");
+
+        RequestEntity<MemberDto> requestEntity = RequestEntity
+                .post(uri)
+                .header("my-header", "Wikibooks API")
+                .body(memberDTO);
+
+        RestTemplate restTemplate = new RestTemplate();
+        ResponseEntity<MemberDto> responseEntity = restTemplate.exchange(requestEntity, MemberDto.class);
+        return responseEntity;
     }
 }
