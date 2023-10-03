@@ -13,6 +13,13 @@
 
 ## :notebook_with_decorative_cover: Tech Stack
 
-* ### Spring
-* ### Spring Boot
-* ### Spring Security
+* ### Backend
+    - Java 11
+    - SpringBoot 2.5.6
+    - JPA(Spring Data JPA)
+    - Spring Security
+    - JWT
+* ### Build Tool
+    - Maven 3.9.2
+* ### DataBase
+    - MariaDB 10.6.5
