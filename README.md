@@ -18,7 +18,7 @@
     <img src="https://img.shields.io/badge/Spring-2.5.6-6DB33F?style=round-square&logo=Spring&logoColor=white"/>
     <img src="https://img.shields.io/badge/Spring%20Boot-6DB33F?style=round-square&logo=springboot&logoColor=white"/>
     <img src="https://img.shields.io/badge/Spring%20Security-6DB33F?style=round-square&logo=SpringSecurity&logoColor=white"/>
-    <img src="https://img.shields.io/badge/JWT-000000?style=round-square&logo=jsonwebtokens&logoColor=white"/><br>
+    <img src="https://img.shields.io/badge/JWT-000000?style=round-square&logo=jsonwebtokens&logoColor=white"/>
 
 * #### Build Tool
     <img src="https://img.shields.io/badge/Maven-3.9.2-C71A36?style=round-square&logo=apachemaven&logoColor=white"/>
